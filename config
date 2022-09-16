@@ -218,9 +218,27 @@ bar {
 exec --no-startup-id /opt/clash-for-windows-bin/cfw
 exec_always fcitx5 -d --replace
 
-# border none --> no mouse to adjust , piexl 1 -> adjust
-default_border none
+# border none --> no mouse to adjust , pixel 1 -> adjust
+default_border pixel 1
 # A 3-pixel border around every window.
 #gaps inner 3
+
+# swaylock:swaylock-effects-git
+set $swaylock swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color bb00cc \
+	--key-hl-color 880033 \
+	--line-color 00000000 \
+	--inside-color 00000088 \
+	--separator-color 00000000 \
+	--grace 0.1 \
+    --fade-in 0.2
+bindsym $mod+Ctrl+l exec $swaylock
 
 include /etc/sway/config.d/*
